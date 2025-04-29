@@ -3,13 +3,90 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chios Cleanings | Premium Cleaning Services in Las Cruces, NM</title>
+    <meta name="description" content="Chios Cleaning offers professional residential & commercial cleaning services in Las Cruces, NM. Trusted, eco-friendly cleaning with flexible scheduling. Free estimates!">
+    <meta name="keywords" content="cleaning service Las Cruces, house cleaning, commercial cleaning, maid service, deep cleaning, move-in/move-out cleaning, eco-friendly cleaning, professional cleaners NM">
+    <meta name="author" content="Chios Cleaning">
+    <meta name="robots" content="index, follow">
+    <meta name="geo.region" content="US-NM">
+    <meta name="geo.placename" content="Las Cruces">
+    
+    <!-- Open Graph / Social Media Meta Tags -->
+    <meta property="og:title" content="Chios Cleaning | Premium Cleaning Services in Las Cruces, NM">
+    <meta property="og:description" content="Professional residential & commercial cleaning services in Las Cruces. Eco-friendly solutions with flexible scheduling.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.chioscleaning.com">
+    <meta property="og:image" content="img/banner.png">
+    <meta property="og:site_name" content="Chios Cleaning">
+    <meta property="og:locale" content="en_US">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Chios Cleaning | Premium Cleaning Services in Las Cruces, NM">
+    <meta name="twitter:description" content="Professional residential & commercial cleaning services in Las Cruces. Eco-friendly solutions with flexible scheduling.">
+    <meta name="twitter:image" content="img/banner.png">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://www.chioscleaning.com">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="img/icon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" href="/img/icon.png">
+    
+    <!-- Title with location and primary service -->
+    <title>Chios Cleaning | Professional House & Office Cleaning in Las Cruces, NM</title>
+    
+    <!-- Schema.org markup for Google -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "Chios Cleaning",
+      "image": "img/logo.png",
+      "@id": "https://www.chioscleaning.com",
+      "url": "https://www.chioscleaning.com",
+      "telephone": "+1-XXX-XXX-XXXX",
+      "priceRange": "$$",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "",
+        "addressLocality": "Las Cruces",
+        "addressRegion": "NM",
+        "postalCode": "",
+        "addressCountry": "US"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 32.3199,
+        "longitude": -106.7637
+      },
+      "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday",
+          "Saturday"
+        ],
+        "opens": "08:00",
+        "closes": "18:00"
+      },
+      "sameAs": [
+        "https://www.facebook.com/chioscleanings",
+        "https://www.instagram.com/chioscleanings"
+      ]
+    }
+    </script>
+    
+    <!-- CSS and JS Resources -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flag-icons/6.6.6/css/flag-icons.min.css">
-
+    
+</head>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Figtree:wght@300;400;500;600;700;800&display=swap');
         
@@ -124,7 +201,6 @@
             transform: translateY(0);
         }
     </style>
-</head>
 <body class="bg-white text-gray-900 antialiased">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <style>
@@ -241,6 +317,244 @@
         </div>
     </div>
 </nav>
+
+<div id="contactPopup" class="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4 hidden">
+    <div class="bg-white rounded-xl max-w-md w-full p-8 relative animate__animated animate__fadeInUp">
+        <button id="closeContactPopup" class="absolute top-4 right-4 text-gray-500 hover:text-black">
+            <i class="fas fa-times"></i>
+        </button>
+        <div class="text-center mb-6">
+            <img src="img/logo.png" alt="Chios Cleanings" class="h-16 mx-auto mb-4">
+            <h3 class="text-2xl font-bold" data-i18n="contactUs">Contact Us</h3>
+            <p class="text-gray-600 mt-2" data-i18n="contactPopupText">Fill out the form below and we'll get back to you within 24 hours.</p>
+        </div>
+        
+        <form id="popupContactForm" action="https://formspree.io/f/xwpovvvw" method="POST" class="space-y-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div>
+                    <label for="popupFirstName" class="block text-sm font-medium mb-1" data-i18n="firstName">First Name *</label>
+                    <input type="text" id="popupFirstName" name="firstName" required 
+                           class="w-full px-4 py-2 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-black focus:border-transparent">
+                </div>
+                <div>
+                    <label for="popupLastName" class="block text-sm font-medium mb-1" data-i18n="lastName">Last Name *</label>
+                    <input type="text" id="popupLastName" name="lastName" required 
+                           class="w-full px-4 py-2 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-black focus:border-transparent">
+                </div>
+            </div>
+            
+            <div>
+                <label for="popupEmail" class="block text-sm font-medium mb-1" data-i18n="email">Email *</label>
+                <input type="email" id="popupEmail" name="email" required 
+                       class="w-full px-4 py-2 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-black focus:border-transparent">
+            </div>
+            
+            <div>
+                <label for="popupPhone" class="block text-sm font-medium mb-1" data-i18n="phone">Phone *</label>
+                <input type="tel" id="popupPhone" name="phone" required 
+                       class="w-full px-4 py-2 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-black focus:border-transparent">
+            </div>
+            
+            <div>
+                <label for="popupMessage" class="block text-sm font-medium mb-1" data-i18n="message">Message</label>
+                <textarea id="popupMessage" name="message" rows="3" 
+                          class="w-full px-4 py-2 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-black focus:border-transparent"></textarea>
+            </div>
+            
+            <button type="submit" class="w-full bg-black text-white py-3 rounded-lg hover:bg-gray-800 transition-all font-medium" data-i18n="submitRequest">Submit Request</button>
+        </form>
+    </div>
+</div>
+
+<script>
+    // Contact Popup Logic
+    document.addEventListener('DOMContentLoaded', function() {
+        // Add translations for popup
+        const translations = Alpine.store('translations');
+        translations.en.contactPopupText = "Fill out the form below and we'll get back to you within 24 hours.";
+        translations.en.message = "Message";
+        
+        translations.es.contactPopupText = "Complete el formulario a continuación y nos pondremos en contacto con usted dentro de 24 horas.";
+        translations.es.message = "Mensaje";
+        
+        // Function to handle popup open/close
+        function toggleContactPopup(show) {
+            const popup = document.getElementById('contactPopup');
+            const body = document.body;
+            
+            if (show) {
+                popup.classList.remove('hidden');
+                body.style.overflow = 'hidden';
+            } else {
+                popup.classList.add('hidden');
+                body.style.overflow = 'auto';
+            }
+        }
+        
+        // Function to show success popup
+        function showSuccessPopup(message) {
+            const successPopup = document.getElementById('successPopup');
+            const successMessage = document.getElementById('successMessage');
+            const body = document.body;
+            
+            successMessage.textContent = message;
+            successPopup.classList.remove('hidden');
+            body.style.overflow = 'hidden';
+        }
+        
+        // Close button functionality
+        document.getElementById('closeContactPopup')?.addEventListener('click', function() {
+            toggleContactPopup(false);
+        });
+        
+        // Close when clicking outside the popup
+        document.getElementById('contactPopup')?.addEventListener('click', function(e) {
+            if (e.target === this) {
+                toggleContactPopup(false);
+            }
+        });
+        
+        // Close success popup button
+        document.getElementById('closeSuccessPopup')?.addEventListener('click', function() {
+            document.getElementById('successPopup').classList.add('hidden');
+            document.body.style.overflow = 'auto';
+        });
+        
+        // Form submission
+        document.getElementById('popupContactForm')?.addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            const form = e.target;
+            const formData = new FormData(form);
+            
+            try {
+                const response = await fetch(form.action, {
+                    method: 'POST',
+                    body: formData,
+                    headers: {
+                        'Accept': 'application/json'
+                    }
+                });
+                
+                if (response.ok) {
+                    form.reset();
+                    toggleContactPopup(false);
+                    showSuccessPopup('Thank you for your request! We will contact you within 24 hours.');
+                } else {
+                    throw new Error('Form submission failed');
+                }
+            } catch (error) {
+                console.error('Error:', error);
+                showSuccessPopup('There was a problem submitting your form. Please try again.');
+            }
+        });
+        
+        // Handle any links that have href="#contact"
+        const allContactLinks = document.querySelectorAll('a[href="#contact"]');
+        allContactLinks.forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                toggleContactPopup(true);
+
+                // If inside mobile menu, close the menu
+                if (this.closest('.mobile-menu')) {
+                    Alpine.store('mobileMenuOpen', false);
+                }
+            });
+        });
+    });
+</script>
+<!-- Success Popup (hidden by default) -->
+<div id="successPopup" class="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4 hidden">
+    <div class="bg-white rounded-xl max-w-md w-full p-8 relative animate__animated animate__fadeInUp">
+        <div class="text-center mb-6">
+            <div class="mx-auto flex items-center justify-center h-12 w-12 rounded-full bg-green-100 mb-4">
+                <svg class="h-6 w-6 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                </svg>
+            </div>
+            <h3 class="text-2xl font-bold mb-2" data-i18n="successTitle">Success!</h3>
+            <p class="text-gray-600" id="successMessage" data-i18n="successMessageDefault">Your form has been submitted successfully.</p>
+        </div>
+        
+        <button id="closeSuccessPopup" class="w-full bg-black text-white py-3 rounded-lg hover:bg-gray-800 transition-all font-medium" data-i18n="closeButton">Close</button>
+    </div>
+</div>
+
+<script>
+    // Success Popup Logic
+    document.addEventListener('DOMContentLoaded', function() {
+        // Add translations for success popup
+        const translations = Alpine.store('translations');
+        translations.en.successTitle = "Success!";
+        translations.en.successMessageDefault = "Your form has been submitted successfully.";
+        translations.en.closeButton = "Close";
+        
+        translations.es.successTitle = "¡Éxito!";
+        translations.es.successMessageDefault = "Su formulario ha sido enviado con éxito.";
+        translations.es.closeButton = "Cerrar";
+        
+        // Function to handle success popup
+        function showSuccessPopup(message = null) {
+            const popup = document.getElementById('successPopup');
+            const body = document.body;
+            
+            if (message) {
+                document.getElementById('successMessage').textContent = message;
+            }
+            
+            popup.classList.remove('hidden');
+            body.style.overflow = 'hidden';
+        }
+        
+        function hideSuccessPopup() {
+            const popup = document.getElementById('successPopup');
+            const body = document.body;
+            
+            popup.classList.add('hidden');
+            body.style.overflow = 'auto';
+        }
+        
+        // Close button functionality
+        document.getElementById('closeSuccessPopup')?.addEventListener('click', hideSuccessPopup);
+        
+        // Close when clicking outside the popup
+        document.getElementById('successPopup')?.addEventListener('click', function(e) {
+            if (e.target === this) {
+                hideSuccessPopup();
+            }
+        });
+        
+        // Modify your existing form submission to use this popup
+        document.getElementById('popupContactForm')?.addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            const form = e.target;
+            const formData = new FormData(form);
+            
+            try {
+                const response = await fetch(form.action, {
+                    method: 'POST',
+                    body: formData,
+                    headers: {
+                        'Accept': 'application/json'
+                    }
+                });
+                
+                if (response.ok) {
+                    form.reset();
+                    showSuccessPopup("Thank you for your request! We will contact you within 24 hours.");
+                } else {
+                    throw new Error('Form submission failed');
+                }
+            } catch (error) {
+                console.error('Error:', error);
+                showSuccessPopup("There was a problem submitting your form. Please try again.");
+            }
+        });
+    });
+</script>
+
 <!-- First Time Visitor Popup -->
 <div id="welcomePopup" class="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4 hidden">
     <div class="bg-white rounded-xl max-w-md w-full p-8 relative animate__animated animate__fadeInUp">
@@ -368,7 +682,7 @@
         Professional cleaning solutions tailored to your residential or commercial needs.
       </p>
       <div class="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
-        <a href="#contact" class="bg-black text-white px-6 sm:px-8 py-3 rounded-lg hover:bg-gray-800 transition-all font-medium text-center" data-i18n="getQuote">Get a Free Quote</a>
+        <a href="#quote" class="bg-black text-white px-6 sm:px-8 py-3 rounded-lg hover:bg-gray-800 transition-all font-medium text-center" data-i18n="getQuote">Get a Free Quote</a>
         <a href="#services" class="border border-black text-black px-6 sm:px-8 py-3 rounded-lg hover:bg-gray-100 transition-all font-medium text-center" data-i18n="ourServices">Our Services</a>
       </div>
     </div>
@@ -392,9 +706,42 @@
     </div>
 
   </div>
+
+  <!-- Floating/Dancing Arrow -->
+<div class="flex justify-center pb-8 sm:pb-6">
+  <a href="#services" class="animate-bounce cursor-pointer">
+    <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-gray-600 hover:text-black transition-colors duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+    </svg>
+  </a>
+</div>
+
 </section>
 
+<script> 
+document.addEventListener('DOMContentLoaded', () => {
+  // Select all links that point to an ID (#)
+  const links = document.querySelectorAll('a[href^="#"]');
 
+  links.forEach(link => {
+    link.addEventListener('click', function(e) {
+      e.preventDefault(); // Prevent instant jump
+
+      const targetId = this.getAttribute('href').substring(1);
+      const targetElement = document.getElementById(targetId);
+
+      if (targetElement) {
+        // Smoothly scroll to the element
+        targetElement.scrollIntoView({
+          behavior: 'smooth',
+          block: 'start' // scroll to the top of the element
+        });
+      }
+    });
+  });
+});
+
+</script>
 
 
 <!-- Services Section -->
@@ -545,10 +892,10 @@
             <div class="md:w-1/2 animate__animated animate__fadeInRight">
                 <span class="text-sm font-semibold tracking-wider text-gray-500 uppercase" data-i18n="aboutUs">About Us</span>
                 <h2 class="text-3xl md:text-4xl font-bold mt-2 mb-6" data-i18n="aboutTitle">Locally-Owned Cleaning Excellence</h2>
-                <p class="text-gray-600 mb-6" data-i18n="aboutText1">Chios Cleanings is a passionate, locally-owned business dedicated to delivering exceptional cleaning services across New Mexico. Founded in 2020, we've built our reputation on reliability, attention to detail, and personalized service.</p>
+                <p class="text-gray-600 mb-6" data-i18n="aboutText1">Chios Cleanings is a passionate, locally-owned business dedicated to delivering exceptional cleaning services across New Mexico. We've built our reputation on reliability, attention to detail, and personalized service.</p>
                 <p class="text-gray-600 mb-8" data-i18n="aboutText2">Our team takes pride in transforming spaces, whether it's a cozy home, bustling office, or vacation rental. We believe a clean environment enhances quality of life and business success.</p>
                 <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                    <a href="#team" class="bg-black text-white px-6 py-3 rounded-lg hover:bg-gray-800 transition-all font-medium text-center" data-i18n="meetTeam">Meet Our Team</a>
+                    <a href="#team" class="bg-black text-white px-6 py-3 rounded-lg hover:bg-gray-800 transition-all font-medium text-center" data-i18n="meetTeam">Read More</a>
                     <a href="#contact" class="border border-black text-black px-6 py-3 rounded-lg hover:bg-gray-200 transition-all font-medium text-center" data-i18n="contactUs">Contact Us</a>
                 </div>
             </div>
@@ -661,16 +1008,16 @@
         <div class="max-w-4xl mx-auto text-center">
             <h2 class="text-3xl md:text-4xl font-bold mb-6" data-i18n="ctaTitle">Ready to Experience the Chios Difference?</h2>
             <p class="text-xl text-gray-300 mb-8" data-i18n="ctaText">Get your free quote today and discover why Las Cruces residents trust us with their cleaning needs.</p>
-            <a href="#contact" class="bg-white text-black px-8 py-4 rounded-lg hover:bg-gray-200 transition-all font-medium inline-block" data-i18n="getQuote">Get Your Free Quote</a>
+            <a href="#quote" class="bg-white text-black px-8 py-4 rounded-lg hover:bg-gray-200 transition-all font-medium inline-block" data-i18n="getQuote">Get Your Free Quote</a>
         </div>
     </section>
 
-<!-- Contact Section -->
-<section id="contact" class="py-24 px-6 bg-white section-curved">
+<!-- quote Section -->
+<section id="quote" class="py-24 px-6 bg-white section-curved">
     <div class="max-w-7xl mx-auto">
         <div class="flex flex-col md:flex-row">
             <div class="md:w-1/2 mb-16 md:mb-0 md:pr-16 animate__animated animate__fadeInLeft">
-              <span class="text-sm font-semibold tracking-wider text-gray-500 uppercase" data-i18n="contactUs">Contact Us</span>
+              <span class="text-sm font-semibold tracking-wider text-gray-500 uppercase" data-i18n="contactUs">Get a Quote</span>
 
                 <h2 class="text-3xl md:text-4xl font-bold mt-2 mb-6" data-i18n="contactTitle">Get In Touch</h2>
                 <p class="text-gray-600 mb-8" data-i18n="contactText">Have questions or ready to schedule a service? Fill out the form and we'll get back to you within 24 hours.</p>
@@ -678,19 +1025,19 @@
                 <!-- Contact Information (Visible for Desktop) -->
                 <div class="hidden md:block mt-8">
                     <div class="space-y-6">
-                        <div class="flex items-start">
+                        <div class="flex items-start cursor-pointer" onclick="window.location.href='tel:+15755202483'">
                             <div class="bg-gray-100 p-3 rounded-lg mr-4">
-                                <i class="fas fa-phone text-gray-700"></i>
+                                <i class="fas fa-phone text-gray-700 hover:text-black"></i>
                             </div>
                             <div>
                                 <h4 class="font-medium mb-1" data-i18n="phone">Phone</h4>
-                                <p class="text-gray-600">(575) 555-1234</p>
+                                <p class="text-gray-600">(575) 520-2483</p>
                             </div>
                         </div>
 
-                        <div class="flex items-start">
+                        <div class="flex items-start cursor-pointer" onclick="window.location.href='mailto:felix@chioscleanings.com'">
                             <div class="bg-gray-100 p-3 rounded-lg mr-4">
-                                <i class="fas fa-envelope text-gray-700"></i>
+                                <i class="fas fa-envelope text-gray-700 hover:text-black"></i>
                             </div>
                             <div>
                                 <h4 class="font-medium mb-1" data-i18n="email">Email</h4>
@@ -698,9 +1045,9 @@
                             </div>
                         </div>
 
-                        <div class="flex items-start">
+                        <div class="flex items-start cursor-pointer" onclick="toggleServiceAreaPopup()">
                             <div class="bg-gray-100 p-3 rounded-lg mr-4">
-                                <i class="fas fa-map-marker-alt text-gray-700"></i>
+                                <i class="fas fa-map-marker-alt text-gray-700 hover:text-black"></i>
                             </div>
                             <div>
                                 <h4 class="font-medium mb-1" data-i18n="serviceArea">Service Area</h4>
@@ -713,7 +1060,7 @@
 
             <div class="md:w-1/2 animate__animated animate__fadeInRight">
                 <form id="quoteForm" class="bg-white p-8 rounded-xl border border-gray-100 shadow-sm"
-                      @submit.prevent="alert('Thank you for your request! We will contact you within 24 hours.'); $event.target.reset()">
+                      action="https://formspree.io/f/xgvkooey" method="POST">
                     <h3 class="text-xl font-bold mb-6" data-i18n="requestQuote">Request a Free Quote</h3>
 
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
@@ -755,11 +1102,10 @@
 
                     <div class="mb-6">
                         <label for="details" class="block text-sm font-medium mb-2" data-i18n="additionalDetails">Additional Details</label>
-                        <textarea id="details" name="details" rows="4" 
+                        <textarea id="details" name="message" rows="4" 
                                   class="w-full px-4 py-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-black focus:border-transparent"></textarea>
                     </div>
 
-                    <!-- New Discount Code Field -->
                     <div class="mb-6">
                         <label for="discountCode" class="block text-sm font-medium mb-2" data-i18n="discountCode">Discount Code (Optional)</label>
                         <input type="text" id="discountCode" name="discountCode" 
@@ -775,19 +1121,19 @@
         <!-- Contact Information for Mobile -->
         <div class="md:hidden mt-8">
             <div class="space-y-6">
-                <div class="flex items-start">
+                <div class="flex items-start cursor-pointer" onclick="window.location.href='tel:+15755202483'">
                     <div class="bg-gray-100 p-3 rounded-lg mr-4">
-                        <i class="fas fa-phone text-gray-700"></i>
+                        <i class="fas fa-phone text-gray-700 hover:text-black"></i>
                     </div>
                     <div>
                         <h4 class="font-medium mb-1" data-i18n="phone">Phone</h4>
-                        <p class="text-gray-600">(575) 555-1234</p>
+                        <p class="text-gray-600">(575) 520-2483</p>
                     </div>
                 </div>
 
-                <div class="flex items-start">
+                <div class="flex items-start cursor-pointer" onclick="window.location.href='mailto:felix@chioscleanings.com'">
                     <div class="bg-gray-100 p-3 rounded-lg mr-4">
-                        <i class="fas fa-envelope text-gray-700"></i>
+                        <i class="fas fa-envelope text-gray-700 hover:text-black"></i>
                     </div>
                     <div>
                         <h4 class="font-medium mb-1" data-i18n="email">Email</h4>
@@ -795,9 +1141,9 @@
                     </div>
                 </div>
 
-                <div class="flex items-start">
+                <div class="flex items-start cursor-pointer" onclick="toggleServiceAreaPopup()">
                     <div class="bg-gray-100 p-3 rounded-lg mr-4">
-                        <i class="fas fa-map-marker-alt text-gray-700"></i>
+                        <i class="fas fa-map-marker-alt text-gray-700 hover:text-black"></i>
                     </div>
                     <div>
                         <h4 class="font-medium mb-1" data-i18n="serviceArea">Service Area</h4>
@@ -808,6 +1154,135 @@
         </div>
     </div>
 </section>
+
+<!-- Success Popup (hidden by default) -->
+<div id="successPopup" class="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4 hidden">
+    <div class="bg-white rounded-xl max-w-md w-full p-8 relative animate__animated animate__fadeInUp">
+        <div class="text-center mb-6">
+            <div class="mx-auto flex items-center justify-center h-12 w-12 rounded-full bg-green-100 mb-4">
+                <svg class="h-6 w-6 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                </svg>
+            </div>
+            <h3 class="text-2xl font-bold mb-2" data-i18n="successTitle">Success!</h3>
+            <p class="text-gray-600" id="successMessage" data-i18n="successMessageDefault">Your quote request has been submitted successfully.</p>
+        </div>
+        
+        <button id="closeSuccessPopup" class="w-full bg-black text-white py-3 rounded-lg hover:bg-gray-800 transition-all font-medium" data-i18n="closeButton">Close</button>
+    </div>
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Add translations for success popup
+        const translations = Alpine.store('translations');
+        translations.en.successTitle = "Success!";
+        translations.en.successMessageDefault = "Your quote request has been submitted successfully.";
+        translations.en.closeButton = "Close";
+        
+        translations.es.successTitle = "¡Éxito!";
+        translations.es.successMessageDefault = "Su solicitud de cotización ha sido enviada con éxito.";
+        translations.es.closeButton = "Cerrar";
+
+        // Function to show success popup
+        function showSuccessPopup(message = null) {
+            const popup = document.getElementById('successPopup');
+            const body = document.body;
+            
+            if (message) {
+                document.getElementById('successMessage').textContent = message;
+            }
+            
+            popup.classList.remove('hidden');
+            body.style.overflow = 'hidden';
+        }
+
+        // Close success popup
+        function hideSuccessPopup() {
+            const popup = document.getElementById('successPopup');
+            const body = document.body;
+            
+            popup.classList.add('hidden');
+            body.style.overflow = 'auto';
+        }
+
+        // Close button functionality
+        document.getElementById('closeSuccessPopup')?.addEventListener('click', hideSuccessPopup);
+        
+        // Close when clicking outside the popup
+        document.getElementById('successPopup')?.addEventListener('click', function(e) {
+            if (e.target === this) {
+                hideSuccessPopup();
+            }
+        });
+
+        // Quote form submission
+        document.getElementById('quoteForm')?.addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            const form = e.target;
+            const formData = new FormData(form);
+            
+            try {
+                const response = await fetch(form.action, {
+                    method: 'POST',
+                    body: formData,
+                    headers: {
+                        'Accept': 'application/json'
+                    }
+                });
+                
+                if (response.ok) {
+                    form.reset();
+                    showSuccessPopup("Thank you for your quote request! We will contact you within 24 hours.");
+                } else {
+                    throw new Error('Form submission failed');
+                }
+            } catch (error) {
+                console.error('Error:', error);
+                showSuccessPopup("There was a problem submitting your request. Please try again.");
+            }
+        });
+    });
+</script>
+
+<!-- Service Area Popup -->
+<div id="serviceAreaPopup" class="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4 hidden">
+    <div class="bg-white rounded-xl max-w-4xl w-full p-6 relative animate__animated animate__fadeInUp">
+        <button onclick="toggleServiceAreaPopup()" class="absolute top-4 right-4 text-gray-500 hover:text-black">
+            <i class="fas fa-times"></i>
+        </button>
+        <div class="text-center mb-4">
+            <h3 class="text-2xl font-bold" data-i18n="serviceArea">Service Area</h3>
+        </div>
+        <div class="flex justify-center">
+            <img src="img/servicearea.png" alt="Service Area Map" class="max-h-[80vh] object-contain rounded-lg">
+        </div>
+    </div>
+</div>
+
+<script>
+// Toggle Service Area Popup
+function toggleServiceAreaPopup() {
+    const popup = document.getElementById('serviceAreaPopup');
+    const body = document.body;
+    
+    if (popup.classList.contains('hidden')) {
+        popup.classList.remove('hidden');
+        body.style.overflow = 'hidden';
+    } else {
+        popup.classList.add('hidden');
+        body.style.overflow = 'auto';
+    }
+}
+
+// Close when clicking outside popup
+document.getElementById('serviceAreaPopup')?.addEventListener('click', function(e) {
+    if (e.target === this) {
+        toggleServiceAreaPopup();
+    }
+});
+</script>
 <style> 
 @media (max-width: 768px) {
     /* Hide the 'Contact Us' span on mobile */
@@ -920,8 +1395,12 @@
         <div class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center">
             <p class="text-gray-500 text-sm mb-4 md:mb-0 text-center">© 2025 Chios Cleanings. All rights reserved.</p>
             <div class="flex space-x-6 justify-center md:justify-start">
-                <!-- You can add any footer links here -->
-            </div>
+  <p class="text-gray-600 text-xs">
+    Developed by 
+    <a href="https://www.blacnova.net" target="_blank" class="text-blue-500 hover:text-blue-700 transition-colors duration-300">Blacnova</a>
+  </p>
+</div>
+
         </div>
     </div>
 </footer>
@@ -974,9 +1453,9 @@
                   // About Section
 aboutUs: "About Us",
 aboutTitle: "Locally-Owned Cleaning Excellence",
-aboutText1: "Chios Cleanings is a passionate, locally-owned business dedicated to delivering exceptional cleaning services across New Mexico. Founded in 2020, we've built our reputation on reliability, attention to detail, and personalized service.",
+aboutText1: "Chios Cleanings is a passionate, locally-owned business dedicated to delivering exceptional cleaning services across New Mexico. We've built our reputation on reliability, attention to detail, and personalized service.",
 aboutText2: "Our team takes pride in transforming spaces, whether it's a cozy home, bustling office, or vacation rental. We believe a clean environment enhances quality of life and business success.",
-meetTeam: "Meet Our Team",
+meetTeam: "Read More",
 contactUs: "Contact Us",
 
                     
@@ -1005,7 +1484,7 @@ contactUs: "Contact Us",
                     
                     // Footer
                     company: "Company",
-                    footerAbout: "Professional cleaning services in Las Cruces, NM. Making spaces shine since 2020.",
+                    footerAbout: "Professional cleaning services in Las Cruces, NM.",
                     privacy: "Privacy Policy",
                     terms: "Terms of Service"
                 },
@@ -1053,7 +1532,7 @@ contactUs: "Contact Us",
                     // About Section
                     aboutUs: "Nosotros",
                     aboutTitle: "Excelencia en Limpieza de Mujeres",
-                    aboutText1: "Chios Cleanings es un negocio apasionado, propiedad de mujeres, dedicado a brindar servicios de limpieza excepcionales en todo Nuevo México. Fundada en 2020, hemos construido nuestra reputación en confiabilidad, atención al detalle y servicio personalizado.",
+                    aboutText1: "Chios Cleanings es un negocio apasionado, propiedad de mujeres, dedicado a brindar servicios de limpieza excepcionales en todo Nuevo México. Hemos construido nuestra reputación en confiabilidad, atención al detalle y servicio personalizado.",
                     aboutText2: "Nuestro equipo se enorgullece de transformar espacios, ya sea un hogar acogedor, una oficina bulliciosa o un alquiler vacacional. Creemos que un ambiente limpio mejora la calidad de vida y el éxito empresarial.",
                     meetTeam: "Conoce al Equipo",
                     contactUs: "Contáctenos",
@@ -1083,7 +1562,7 @@ contactUs: "Contact Us",
                     
                     // Footer
                     company: "Empresa",
-                    footerAbout: "Servicios profesionales de limpieza en Las Cruces, NM. Haciendo brillar espacios desde 2020.",
+                    footerAbout: "Servicios profesionales de limpieza en Las Cruces, NM.",
                     privacy: "Política de Privacidad",
                     terms: "Términos de Servicio"
                 }
