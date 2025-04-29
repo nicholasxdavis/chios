@@ -356,37 +356,45 @@
 
 <!-- Hero Section -->
 <section class="gradient-bg overflow-hidden">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 py-16 sm:py-24 md:py-32 flex flex-col sm:flex-row items-center gap-10">
-        <div class="sm:w-1/2 flex flex-col items-center sm:items-start text-center sm:text-left animate__animated animate__fadeIn animate__delay-1s">
-            <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight mb-6">
-                <span data-i18n="heroTitle">Exceptional Cleaning</span> 
-                <span class="text-gray-600" data-i18n="heroSubtitle">in Las Cruces</span>
-            </h1>
-            <p class="text-lg sm:text-xl text-gray-600 mb-8 max-w-md sm:max-w-lg" data-i18n="heroText">
-                Professional cleaning solutions tailored to your residential or commercial needs.
-            </p>
-            <div class="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
-                <a href="#contact" class="bg-black text-white px-6 sm:px-8 py-3 rounded-lg hover:bg-gray-800 transition-all font-medium text-center" data-i18n="getQuote">Get a Free Quote</a>
-                <a href="#services" class="border border-black text-black px-6 sm:px-8 py-3 rounded-lg hover:bg-gray-100 transition-all font-medium text-center" data-i18n="ourServices">Our Services</a>
-            </div>
-        </div>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 py-16 sm:py-24 md:py-32 flex flex-col-reverse sm:flex-row items-center gap-6 sm:gap-16">
 
-        <div class="sm:w-1/2 animate__animated animate__fadeIn">
-            <div class="relative w-full max-w-sm sm:max-w-full mx-auto">
-                <img src="img/group.jpeg" alt="Clean home" class="rounded-xl shadow-xl w-full object-cover object-bottom max-h-[400px] sm:max-h-[500px]">
-                <div class="absolute -bottom-6 -right-6 bg-white p-4 rounded-lg shadow-lg border border-gray-100 hidden sm:block animate__animated animate__fadeInUp animate__delay-1s">
-                    <div class="flex items-center">
-                        <img src="img/zia.png" alt="New Mexico Zia Symbol" class="w-8 sm:w-10 h-8 sm:h-10 mr-4">
-                        <div>
-                            <p class="font-bold" data-i18n="locallyOwned">Locally Owned</p>
-                            <p class="text-sm text-gray-600" data-i18n="womenOwned">Women-Owned Business</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+    <!-- Text Content -->
+    <div class="w-full sm:w-1/2 flex flex-col items-center sm:items-start text-center sm:text-left animate__animated animate__fadeIn animate__delay-1s">
+      <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight mb-6">
+        <span data-i18n="heroTitle">Exceptional Cleaning</span> 
+        <span class="text-gray-600 block sm:inline" data-i18n="heroSubtitle">in Las Cruces</span>
+      </h1>
+      <p class="text-lg sm:text-xl text-gray-600 mb-8 max-w-md sm:max-w-lg" data-i18n="heroText">
+        Professional cleaning solutions tailored to your residential or commercial needs.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
+        <a href="#contact" class="bg-black text-white px-6 sm:px-8 py-3 rounded-lg hover:bg-gray-800 transition-all font-medium text-center" data-i18n="getQuote">Get a Free Quote</a>
+        <a href="#services" class="border border-black text-black px-6 sm:px-8 py-3 rounded-lg hover:bg-gray-100 transition-all font-medium text-center" data-i18n="ourServices">Our Services</a>
+      </div>
     </div>
+
+    <!-- Image + Badge -->
+    <div class="w-full sm:w-1/2 animate__animated animate__fadeIn relative flex justify-center sm:justify-end mt-2 sm:mt-0">
+      <div class="relative w-[90%] sm:w-full max-w-md sm:max-w-full">
+        <img src="img/group.jpeg" alt="Clean home" class="rounded-xl shadow-xl w-full object-cover object-bottom max-h-[280px] sm:max-h-[500px]">
+
+        <!-- Badge -->
+        <div class="absolute -bottom-3 -right-3 bg-white p-2.5 sm:p-4 rounded-lg shadow-lg border border-gray-100 animate__animated animate__fadeInUp animate__delay-1s text-sm sm:text-base">
+          <div class="flex items-center">
+            <img src="img/zia.png" alt="New Mexico Zia Symbol" class="w-6 sm:w-8 h-6 sm:h-8 mr-2 sm:mr-4">
+            <div>
+              <p class="font-bold leading-tight" data-i18n="locallyOwned">Locally Owned</p>
+              <p class="text-xs sm:text-sm text-gray-600 leading-tight" data-i18n="womenOwned">Women-Owned Business</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
 </section>
+
+
 
 
 <!-- Services Section -->
