@@ -1,0 +1,1161 @@
+<!DOCTYPE html>
+<html lang="en" x-data="{ mobileMenuOpen: false, languageOpen: false }" :lang="$store.language.current">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chios Cleanings | Premium Cleaning Services in Las Cruces, NM</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flag-icons/6.6.6/css/flag-icons.min.css">
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Figtree:wght@300;400;500;600;700;800&display=swap');
+        
+        body {
+            font-family: 'Figtree', sans-serif;
+            scroll-behavior: smooth;
+        }
+        
+        .gradient-bg {
+            background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+            border-bottom-left-radius: 20px;
+            border-bottom-right-radius: 20px;
+        }
+        
+        .section-curved {
+            border-bottom-left-radius: 20px;
+            border-bottom-right-radius: 20px;
+        }
+        
+        .footer-curved {
+            border-top-left-radius: 20px;
+            border-top-right-radius: 20px;
+        }
+        
+        .service-card {
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            will-change: transform;
+            border-bottom-left-radius: 20px;
+            border-bottom-right-radius: 20px;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.08);
+        }
+        
+        .team-card:hover img {
+            transform: scale(1.05);
+        }
+        
+        .review-card {
+            transition: all 0.3s ease;
+            border-bottom-left-radius: 20px;
+            border-bottom-right-radius: 20px;
+        }
+        
+        .review-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.04);
+        }
+        
+        .nav-link {
+            position: relative;
+        }
+        
+        .nav-link:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -4px;
+            left: 0;
+            background-color: black;
+            transition: width 0.3s ease;
+        }
+        
+        .nav-link:hover:after {
+            width: 100%;
+        }
+        
+        .select-arrow {
+            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3e%3c/svg%3e");
+            background-position: right 0.75rem center;
+            background-repeat: no-repeat;
+            background-size: 1.5em 1.5em;
+        }
+        
+        /* Mobile menu styles */
+        .mobile-menu-overlay {
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease, visibility 0.3s ease;
+        }
+        
+        .mobile-menu-overlay.open {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .mobile-menu {
+            transform: translateX(100%);
+            transition: transform 0.3s ease-out;
+        }
+        
+        .mobile-menu.open {
+            transform: translateX(0);
+        }
+        
+        /* Footer logo inversion */
+        .footer-logo {
+            filter: invert(1);
+        }
+        
+        /* Language selector */
+        .language-selector {
+            transition: all 0.3s ease;
+        }
+        
+        .language-selector.open {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body class="bg-white text-gray-900 antialiased">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    /* Container for the phone icon and label */
+    #phone-container {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      display: flex;
+      align-items: center;
+      background-color: #000;
+      border-radius: 30px;
+      padding: 10px 15px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      z-index: 9999;
+      cursor: pointer;
+    }
+
+    /* Style for the label */
+    #phone-container span {
+      color: white;
+      font-size: 14px;
+      margin-right: 10px;
+      font-family: 'Arial', sans-serif;
+      font-weight: 600;
+    }
+
+    /* Style for the phone icon */
+    #phone-container i {
+      color: white;
+      font-size: 30px;
+    }
+  </style>
+
+
+  <!-- Container with label and phone icon -->
+  <div id="phone-container" onclick="window.location.href='tel:+15755202483';">
+    <span>Call Us</span>
+    <i class="fas fa-phone-alt"></i>
+  </div>
+
+    <!-- Navigation -->
+<!-- Navigation -->
+<nav class="bg-white py-5 px-6 sticky top-0 z-50 border-b border-gray-100 shadow-sm" 
+     x-bind:class="{ 'shadow-md': window.scrollY > 10 }"
+     x-data="{ atTop: true }"
+     x-init="window.addEventListener('scroll', () => { atTop = window.scrollY < 10 })">
+    <div class="max-w-7xl mx-auto flex justify-between items-center">
+        <a href="#" class="flex items-center">
+            <img src="img/logo.png" alt="Chios Cleanings" class="h-20">
+        </a>
+        <div class="hidden md:flex items-center space-x-10">
+            <a href="#services" class="nav-link font-medium text-gray-700 hover:text-black" data-i18n="services">Services</a>
+            <a href="#about" class="nav-link font-medium text-gray-700 hover:text-black" data-i18n="about">About</a>
+            <a href="#team" class="nav-link font-medium text-gray-700 hover:text-black" data-i18n="team">Our Team</a>
+            <a href="#reviews" class="nav-link font-medium text-gray-700 hover:text-black" data-i18n="reviews">Reviews</a>
+            <a href="#contact" class="nav-link font-medium text-gray-700 hover:text-black" data-i18n="contact">Contact</a>
+            <div class="relative ml-4">
+                <button @click="$store.language.toggle()" class="flex items-center space-x-1 text-gray-700 hover:text-black">
+                    <span class="fi fi-us" x-show="$store.language.current === 'en'"></span>
+                    <span class="fi fi-mx" x-show="$store.language.current === 'es'"></span>
+                    <span x-text="$store.language.current.toUpperCase()"></span>
+                    <i class="fas fa-chevron-down text-xs ml-1"></i>
+                </button>
+            </div>
+        </div>
+        <div class="flex items-center md:hidden">
+            <div class="relative mr-4">
+                <button @click="$store.language.toggle()" class="flex items-center space-x-1 text-gray-700 hover:text-black">
+                    <span class="fi fi-us" x-show="$store.language.current === 'en'"></span>
+                    <span class="fi fi-mx" x-show="$store.language.current === 'es'"></span>
+                    <span x-text="$store.language.current.toUpperCase()"></span>
+                </button>
+            </div>
+            <button @click="mobileMenuOpen = true" class="text-gray-700 focus:outline-none">
+                <i class="fas fa-bars text-xl"></i>
+            </button>
+        </div>
+    </div>
+    <!-- Mobile Menu - Slides in from right with overlay -->
+    <div class="mobile-menu-overlay fixed inset-0 bg-black bg-opacity-50 z-40"
+         :class="{ 'open': mobileMenuOpen }"
+         x-show="mobileMenuOpen"
+         @click="mobileMenuOpen = false">
+    </div>
+    <div class="mobile-menu fixed inset-y-0 right-0 w-64 bg-white z-50 shadow-lg p-6"
+         :class="{ 'open': mobileMenuOpen }"
+         x-show="mobileMenuOpen"
+         x-transition:enter="transition ease-out duration-300"
+         x-transition:enter-start="transform translate-x-full"
+         x-transition:enter-end="transform translate-x-0"
+         x-transition:leave="transition ease-in duration-300"
+         x-transition:leave-start="transform translate-x-0"
+         x-transition:leave-end="transform translate-x-full">
+        <div class="flex justify-end mb-8">
+            <button @click="mobileMenuOpen = false" class="text-gray-700 hover:text-black">
+                <i class="fas fa-times text-xl"></i>
+            </button>
+        </div>
+        <div class="flex flex-col space-y-8">
+            <a href="#services" @click="mobileMenuOpen = false" class="text-xl font-medium text-gray-700 hover:text-black" data-i18n="services">Services</a>
+            <a href="#about" @click="mobileMenuOpen = false" class="text-xl font-medium text-gray-700 hover:text-black" data-i18n="about">About</a>
+            <a href="#team" @click="mobileMenuOpen = false" class="text-xl font-medium text-gray-700 hover:text-black" data-i18n="team">Our Team</a>
+            <a href="#reviews" @click="mobileMenuOpen = false" class="text-xl font-medium text-gray-700 hover:text-black" data-i18n="reviews">Reviews</a>
+            <a href="#contact" @click="mobileMenuOpen = false" class="text-xl font-medium text-gray-700 hover:text-black" data-i18n="contact">Contact</a>
+            <div class="relative ml-4 mt-4">
+                <button @click="$store.language.toggle()" class="flex items-center space-x-1 text-gray-700 hover:text-black">
+                    <span class="fi fi-us" x-show="$store.language.current === 'en'"></span>
+                    <span class="fi fi-mx" x-show="$store.language.current === 'es'"></span>
+                    <span x-text="$store.language.current.toUpperCase()"></span>
+                    <i class="fas fa-chevron-down text-xs ml-1"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+</nav>
+<!-- First Time Visitor Popup -->
+<div id="welcomePopup" class="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4 hidden">
+    <div class="bg-white rounded-xl max-w-md w-full p-8 relative animate__animated animate__fadeInUp">
+        <button id="closePopup" class="absolute top-4 right-4 text-gray-500 hover:text-black">
+            <i class="fas fa-times"></i>
+        </button>
+        <div class="text-center">
+            <img src="img/logo.png" alt="Chios Cleanings" class="h-16 mx-auto mb-6">
+            <h3 class="text-2xl font-bold mb-4" data-i18n="welcomeTitle">Welcome to Chios Cleanings!</h3>
+            <p class="text-gray-600 mb-6" data-i18n="welcomeText">Get <span class="font-medium">10% off</span> your first cleaning service when you book online!</p>
+            <div id="discountCodeContainer" class="hidden mb-4">
+                <p class="text-sm text-gray-500 mb-2" data-i18n="useCode">Use this code at checkout:</p>
+                <div class="flex justify-center">
+                    <input type="text" id="discountCode" value="CHIOS10" readonly 
+                           class="border border-gray-300 rounded-l-lg px-4 py-2 w-32 text-center font-bold">
+                    <button id="copyCodeBtn" class="bg-black text-white px-4 py-2 rounded-r-lg hover:bg-gray-800 transition">
+                        <i class="fas fa-copy"></i>
+                    </button>
+                </div>
+            </div>
+            <div class="flex flex-col space-y-4">
+                <button id="getDiscountBtn" class="bg-black text-white px-6 py-3 rounded-lg hover:bg-gray-800 transition-all font-medium" data-i18n="getDiscount">Get My Discount</button>
+                <button id="laterBtn" class="text-gray-600 hover:text-black font-medium" data-i18n="maybeLater">Maybe Later</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    // First Time Visitor Popup Logic
+    document.addEventListener('DOMContentLoaded', function() {
+        // Check if this is the first visit
+        if (!localStorage.getItem('chiosPopupShown')) {
+            // Show popup after 2 seconds
+            setTimeout(function() {
+                const popup = document.getElementById('welcomePopup');
+                const body = document.body;
+                
+                // Show popup and disable scrolling
+                popup.classList.remove('hidden');
+                body.style.overflow = 'hidden';
+                
+                // Add translations for popup
+                const translations = Alpine.store('translations');
+                translations.en.welcomeTitle = "Welcome to Chios Cleanings!";
+                translations.en.welcomeText = "Get 10% off your first cleaning service when you book online!";
+                translations.en.getDiscount = "Get My Discount";
+                translations.en.maybeLater = "Maybe Later";
+                translations.en.useCode = "Use this code at checkout:";
+                
+                translations.es.welcomeTitle = "¡Bienvenido a Chios Cleanings!";
+                translations.es.welcomeText = "¡Obtén un 10% de descuento en tu primer servicio de limpieza cuando reserves en línea!";
+                translations.es.getDiscount = "Obtener Descuento";
+                translations.es.maybeLater = "Quizás Más Tarde";
+                translations.es.useCode = "Usa este código al pagar:";
+                
+                // Update texts in case language was already set
+                Alpine.store('language').updateTexts();
+            }, 2000);
+        }
+
+        function closePopup() {
+            const popup = document.getElementById('welcomePopup');
+            const body = document.body;
+            
+            popup.classList.add('hidden');
+            body.style.overflow = 'auto';
+            localStorage.setItem('chiosPopupShown', 'true');
+        }
+
+        // Close button functionality
+        document.getElementById('closePopup')?.addEventListener('click', closePopup);
+
+        // Maybe Later button functionality
+        document.getElementById('laterBtn')?.addEventListener('click', closePopup);
+
+        // Get Discount button functionality
+        document.getElementById('getDiscountBtn')?.addEventListener('click', function() {
+            document.getElementById('discountCodeContainer').classList.remove('hidden');
+            this.classList.add('hidden');
+            
+            // Scroll to contact form if exists
+            const contactSection = document.getElementById('contact');
+            if (contactSection) {
+                setTimeout(() => {
+                    contactSection.scrollIntoView({ behavior: 'smooth' });
+                }, 300);
+            }
+        });
+
+        // Copy code button functionality
+        document.getElementById('copyCodeBtn')?.addEventListener('click', function() {
+            const codeInput = document.getElementById('discountCode');
+            codeInput.select();
+            document.execCommand('copy');
+            
+            // Show copied feedback
+            const originalText = this.innerHTML;
+            this.innerHTML = '<i class="fas fa-check"></i>';
+            setTimeout(() => {
+                this.innerHTML = originalText;
+            }, 2000);
+        });
+
+        // Close when clicking outside the popup
+        document.getElementById('welcomePopup')?.addEventListener('click', function(e) {
+            if (e.target === this) {
+                closePopup();
+            }
+        });
+    });
+</script>
+
+<!-- Hero Section -->
+<section class="gradient-bg overflow-hidden">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 py-16 sm:py-24 md:py-32 flex flex-col sm:flex-row items-center gap-10">
+        <div class="sm:w-1/2 flex flex-col items-center sm:items-start text-center sm:text-left animate__animated animate__fadeIn animate__delay-1s">
+            <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight mb-6">
+                <span data-i18n="heroTitle">Exceptional Cleaning</span> 
+                <span class="text-gray-600" data-i18n="heroSubtitle">in Las Cruces</span>
+            </h1>
+            <p class="text-lg sm:text-xl text-gray-600 mb-8 max-w-md sm:max-w-lg" data-i18n="heroText">
+                Professional cleaning solutions tailored to your residential or commercial needs.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
+                <a href="#contact" class="bg-black text-white px-6 sm:px-8 py-3 rounded-lg hover:bg-gray-800 transition-all font-medium text-center" data-i18n="getQuote">Get a Free Quote</a>
+                <a href="#services" class="border border-black text-black px-6 sm:px-8 py-3 rounded-lg hover:bg-gray-100 transition-all font-medium text-center" data-i18n="ourServices">Our Services</a>
+            </div>
+        </div>
+
+        <div class="sm:w-1/2 animate__animated animate__fadeIn">
+            <div class="relative w-full max-w-sm sm:max-w-full mx-auto">
+                <img src="img/group.jpeg" alt="Clean home" class="rounded-xl shadow-xl w-full object-cover object-bottom max-h-[400px] sm:max-h-[500px]">
+                <div class="absolute -bottom-6 -right-6 bg-white p-4 rounded-lg shadow-lg border border-gray-100 hidden sm:block animate__animated animate__fadeInUp animate__delay-1s">
+                    <div class="flex items-center">
+                        <img src="img/zia.png" alt="New Mexico Zia Symbol" class="w-8 sm:w-10 h-8 sm:h-10 mr-4">
+                        <div>
+                            <p class="font-bold" data-i18n="locallyOwned">Locally Owned</p>
+                            <p class="text-sm text-gray-600" data-i18n="womenOwned">Women-Owned Business</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- Services Section -->
+<section id="services" class="py-24 px-6 bg-white section-curved">
+    <div class="max-w-7xl mx-auto">
+        <div class="text-center mb-16 animate__animated animate__fadeIn">
+            <span class="text-sm font-semibold tracking-wider text-gray-500 uppercase" data-i18n="ourServices">Our Services</span>
+            <h2 class="text-3xl md:text-4xl font-bold mt-2 mb-4" data-i18n="servicesTitle">Premium Cleaning Solutions</h2>
+            <p class="text-gray-600 max-w-2xl mx-auto" data-i18n="servicesSubtitle">
+                Tailored services designed to meet your specific cleaning needs with unmatched attention to detail.
+            </p>
+        </div>
+
+        <div class="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <!-- Residential Cleaning -->
+            <div class="service-card bg-white p-8 rounded-xl border border-gray-100 animate__animated animate__fadeInUp" style="animation-delay: 0.1s">
+                <div class="text-black mb-6">
+                    <div class="w-14 h-14 rounded-lg bg-gray-100 flex items-center justify-center">
+                        <i class="fas fa-home text-2xl"></i>
+                    </div>
+                </div>
+                <h3 class="text-xl font-bold mb-3" data-i18n="residential">Residential Cleaning</h3>
+                <p class="text-gray-600 mb-4 hidden sm:block" data-i18n="residentialText">
+                    Detailed cleaning for homes of all sizes, focusing on high-traffic areas, kitchens, and bathrooms for a fresh living space.
+                </p>
+                <p class="text-gray-600 mb-4 block sm:hidden" data-i18n="residentialTextShort">
+                    Detailed cleaning for homes of all sizes.
+                </p>
+                <a href="#contact" class="text-black font-medium inline-flex items-center mt-2">
+                    <span data-i18n="learnMore">Learn more</span> <i class="fas fa-arrow-right ml-2 text-sm"></i>
+                </a>
+            </div>
+
+            <!-- Commercial Cleaning -->
+            <div class="service-card bg-white p-8 rounded-xl border border-gray-100 animate__animated animate__fadeInUp" style="animation-delay: 0.2s">
+                <div class="text-black mb-6">
+                    <div class="w-14 h-14 rounded-lg bg-gray-100 flex items-center justify-center">
+                        <i class="fas fa-building text-2xl"></i>
+                    </div>
+                </div>
+                <h3 class="text-xl font-bold mb-3" data-i18n="commercial">Commercial Cleaning</h3>
+                <p class="text-gray-600 mb-4 hidden sm:block" data-i18n="commercialText">
+                    Professional cleaning services for businesses, ensuring a sanitary environment for employees and clients.
+                </p>
+                <p class="text-gray-600 mb-4 block sm:hidden" data-i18n="commercialTextShort">
+                    Professional cleaning for businesses.
+                </p>
+                <a href="#contact" class="text-black font-medium inline-flex items-center mt-2">
+                    <span data-i18n="learnMore">Learn more</span> <i class="fas fa-arrow-right ml-2 text-sm"></i>
+                </a>
+            </div>
+
+            <!-- Move-In/Move-Out Cleaning -->
+            <div class="service-card bg-white p-8 rounded-xl border border-gray-100 animate__animated animate__fadeInUp" style="animation-delay: 0.3s">
+                <div class="text-black mb-6">
+                    <div class="w-14 h-14 rounded-lg bg-gray-100 flex items-center justify-center">
+                        <i class="fas fa-truck-moving text-2xl"></i>
+                    </div>
+                </div>
+                <h3 class="text-xl font-bold mb-3" data-i18n="move">Move-In/Move-Out</h3>
+                <p class="text-gray-600 mb-4 hidden sm:block" data-i18n="moveText">
+                    Comprehensive deep cleaning for property transitions, perfect for landlords, tenants, or homeowners.
+                </p>
+                <p class="text-gray-600 mb-4 block sm:hidden" data-i18n="moveTextShort">
+                    Deep cleaning for moving in or out.
+                </p>
+                <a href="#contact" class="text-black font-medium inline-flex items-center mt-2">
+                    <span data-i18n="learnMore">Learn more</span> <i class="fas fa-arrow-right ml-2 text-sm"></i>
+                </a>
+            </div>
+
+            <!-- Airbnb Cleaning -->
+            <div class="service-card bg-white p-8 rounded-xl border border-gray-100 animate__animated animate__fadeInUp" style="animation-delay: 0.4s">
+                <div class="text-black mb-6">
+                    <div class="w-14 h-14 rounded-lg bg-gray-100 flex items-center justify-center">
+                        <i class="fab fa-airbnb text-2xl"></i>
+                    </div>
+                </div>
+                <h3 class="text-xl font-bold mb-3" data-i18n="airbnb">Airbnb Cleaning</h3>
+                <p class="text-gray-600 mb-4 hidden sm:block" data-i18n="airbnbText">
+                    Meticulous cleaning to ensure your rental property is always guest-ready with fresh linens and spotless surfaces.
+                </p>
+                <p class="text-gray-600 mb-4 block sm:hidden" data-i18n="airbnbTextShort">
+                    Guest-ready cleaning for rentals.
+                </p>
+                <a href="#contact" class="text-black font-medium inline-flex items-center mt-2">
+                    <span data-i18n="learnMore">Learn more</span> <i class="fas fa-arrow-right ml-2 text-sm"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+    <!-- Team Section -->
+<section id="team" class="py-24 px-6 bg-black text-white section-curved">
+    <div class="max-w-7xl mx-auto">
+        <div class="text-center mb-16 animate__animated animate__fadeIn">
+            <span class="text-sm font-semibold tracking-wider text-gray-400 uppercase" data-i18n="ourTeam">Our Team</span>
+            <h2 class="text-3xl md:text-4xl font-bold mt-2 mb-4" data-i18n="teamTitle">Meet Chios Cleanings</h2>
+            <p class="text-gray-400 max-w-2xl mx-auto" data-i18n="teamSubtitle">
+                Passionate professionals dedicated to delivering exceptional results.
+            </p>
+        </div>
+
+        <div class="grid grid-cols-3 gap-6 sm:gap-8 md:gap-12">
+            <!-- Aracely Vazquez -->
+            <div class="flex flex-col items-center animate__animated animate__fadeIn" style="animation-delay: 0.1s">
+                <div class="w-24 h-24 sm:w-32 sm:h-32 md:w-48 md:h-48 rounded-full overflow-hidden border-4 border-gray-700">
+                    <img src="img/aracely.jpeg" 
+                         alt="Aracely Vazquez" 
+                         class="w-full h-full object-cover">
+                </div>
+                <h3 class="text-base sm:text-lg md:text-xl font-bold mt-4 sm:mt-6">Aracely Vazquez</h3>
+            </div>
+
+            <!-- Dora Olivias -->
+            <div class="flex flex-col items-center animate__animated animate__fadeIn" style="animation-delay: 0.2s">
+                <div class="w-24 h-24 sm:w-32 sm:h-32 md:w-48 md:h-48 rounded-full overflow-hidden border-4 border-gray-700">
+                    <img src="img/dora.jpeg" 
+                         alt="Dora Olivias" 
+                         class="w-full h-full object-cover">
+                </div>
+                <h3 class="text-base sm:text-lg md:text-xl font-bold mt-4 sm:mt-6">Dora Olivias</h3>
+            </div>
+
+            <!-- Felix Valadez -->
+            <div class="flex flex-col items-center animate__animated animate__fadeIn" style="animation-delay: 0.3s">
+                <div class="w-24 h-24 sm:w-32 sm:h-32 md:w-48 md:h-48 rounded-full overflow-hidden border-4 border-gray-700">
+                    <img src="img/felix.jpeg" 
+                         alt="Felix Valadez" 
+                         class="w-full h-full object-cover object-[center_10%]">
+                </div>
+                <h3 class="text-base sm:text-lg md:text-xl font-bold mt-4 sm:mt-6">Felix Valadez</h3>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section id="about" class="py-24 px-6 gradient-bg section-curved">
+    <div class="max-w-7xl mx-auto">
+        <div class="flex flex-col md:flex-row items-center text-center md:text-left">
+            <div class="md:w-1/2 mb-16 md:mb-0 md:pr-16 animate__animated animate__fadeInLeft">
+                <img src="img/back.jpeg" alt="Cleaning team" class="rounded-xl shadow-lg w-full h-auto">
+            </div>
+            <div class="md:w-1/2 animate__animated animate__fadeInRight">
+                <span class="text-sm font-semibold tracking-wider text-gray-500 uppercase" data-i18n="aboutUs">About Us</span>
+                <h2 class="text-3xl md:text-4xl font-bold mt-2 mb-6" data-i18n="aboutTitle">Locally-Owned Cleaning Excellence</h2>
+                <p class="text-gray-600 mb-6" data-i18n="aboutText1">Chios Cleanings is a passionate, locally-owned business dedicated to delivering exceptional cleaning services across New Mexico. Founded in 2020, we've built our reputation on reliability, attention to detail, and personalized service.</p>
+                <p class="text-gray-600 mb-8" data-i18n="aboutText2">Our team takes pride in transforming spaces, whether it's a cozy home, bustling office, or vacation rental. We believe a clean environment enhances quality of life and business success.</p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="#team" class="bg-black text-white px-6 py-3 rounded-lg hover:bg-gray-800 transition-all font-medium text-center" data-i18n="meetTeam">Meet Our Team</a>
+                    <a href="#contact" class="border border-black text-black px-6 py-3 rounded-lg hover:bg-gray-200 transition-all font-medium text-center" data-i18n="contactUs">Contact Us</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+
+<!-- Reviews Section -->
+<section id="reviews" class="py-16 bg-white border-y border-gray-100 section-curved">
+    <div class="max-w-7xl mx-auto px-6">
+        <div class="text-center mb-12 animate__animated animate__fadeIn">
+            <span class="text-sm font-semibold tracking-wider text-gray-500 uppercase" data-i18n="testimonials">Testimonials</span>
+            <h2 class="text-3xl md:text-4xl font-bold mt-2 mb-4" data-i18n="reviewsTitle">What Our Clients Say</h2>
+        </div>
+        
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Review 1 -->
+            <div class="review-card bg-white p-6 rounded-xl border border-gray-100 animate__animated animate__fadeIn" style="animation-delay: 0.1s">
+                <div class="flex items-center mb-4">
+                    <div class="text-yellow-400 mr-2">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+                <div class="h-32 mb-6"> <!-- Fixed height container -->
+                    <p class="text-gray-600">"10/10 recommend! They accommodated my needs and cleaned in detail. The price is super affordable and was done in a timely matter! I highly recommend them for any cleaning services."</p>
+                </div>
+                <div class="flex items-center">
+                    <div class="w-10 h-10 rounded-full bg-gray-200 mr-4 overflow-hidden">
+                        <img src="img/marissa.png" alt="Marissa Chávez" class="w-full h-full object-cover">
+                    </div>
+                    <div>
+                        <p class="font-medium">Marissa Chávez</p>
+                        <p class="text-sm text-gray-500">8 weeks ago • 1 review</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Review 2 -->
+            <div class="review-card bg-white p-6 rounded-xl border border-gray-100 animate__animated animate__fadeIn" style="animation-delay: 0.2s">
+                <div class="flex items-center mb-4">
+                    <div class="text-yellow-400 mr-2">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+                <div class="h-32 mb-6"> <!-- Fixed height container -->
+                    <p class="text-gray-600">"Chios Cleanings. They pay great attention to detail, are always on time, and leave my home spotless. I couldn't be happier with their service!"</p>
+                </div>
+                <div class="flex items-center">
+                    <div class="w-10 h-10 rounded-full bg-gray-200 mr-4 overflow-hidden">
+                        <img src="img/jasmin.png" alt="Jasmine Munoz" class="w-full h-full object-cover">
+                    </div>
+                    <div>
+                        <p class="font-medium">Jasmine Munoz</p>
+                        <p class="text-sm text-gray-500">5 weeks ago • 2 reviews</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Review 3 -->
+            <div class="review-card bg-white p-6 rounded-xl border border-gray-100 animate__animated animate__fadeIn" style="animation-delay: 0.3s">
+                <div class="flex items-center mb-4">
+                    <div class="text-yellow-400 mr-2">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+                <div class="h-32 mb-6"> <!-- Fixed height container -->
+                    <p class="text-gray-600">"Rocio was awesome. Fast, thorough and reasonable. And she has an excellent attitude f work ethic. Highly recommend!!"</p>
+                </div>
+                <div class="flex items-center">
+                    <div class="w-10 h-10 rounded-full bg-gray-200 mr-4 overflow-hidden">
+                        <img src="img/jake.png" alt="Jake Mossman" class="w-full h-full object-cover">
+                    </div>
+                    <div>
+                        <p class="font-medium">Jake Mossman</p>
+                        <p class="text-sm text-gray-500">2 weeks ago • 36 reviews</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Add Review Button -->
+        <div class="text-center mt-12 animate__animated animate__fadeIn">
+            <a href="https://www.google.com/search?sca_esv=190500b2ec45819f&rlz=1C1ONGR_enUS1071US1071&sxsrf=AHTn8zrzBFZG224FwNjH-uAxXyi_oH1eBg:1745885927070&si=APYL9bs7Hg2KMLB-4tSoTdxuOx8BdRvHbByC_AuVpNyh0x2KzawrdPQHqR98SrQ_8SWVc54zGzsHOW7yM4eEdRP63mpywaCbfCqKHmEL3_wV6wKEpYLv-PeUTOp2gncqIXYDjX_gfnGt&q=Chios+Cleanings+Reviews&sa=X&ved=2ahUKEwj7mIH0-_uMAxUsHDQIHciSGnIQ0bkNegQINRAD&biw=1920&bih=957&dpr=1&sei=ABsQaLO1OvrP0PEP-87DkA4#lrd=0xe5d6a318f20ff3:0xbea92c6073d89e6,3,,,,"
+               target="_blank" class="block">
+                <button class="bg-black text-white font-medium py-3 px-8 rounded-lg hover:bg-gray-800 transition-colors duration-300">
+                    Add a Review
+                </button>
+            </a>
+        </div>
+    </div>
+</section>
+
+    <!-- CTA Section -->
+    <section class="py-20 px-6 bg-black text-white animate__animated animate__fadeIn section-curved">
+        <div class="max-w-4xl mx-auto text-center">
+            <h2 class="text-3xl md:text-4xl font-bold mb-6" data-i18n="ctaTitle">Ready to Experience the Chios Difference?</h2>
+            <p class="text-xl text-gray-300 mb-8" data-i18n="ctaText">Get your free quote today and discover why Las Cruces residents trust us with their cleaning needs.</p>
+            <a href="#contact" class="bg-white text-black px-8 py-4 rounded-lg hover:bg-gray-200 transition-all font-medium inline-block" data-i18n="getQuote">Get Your Free Quote</a>
+        </div>
+    </section>
+
+<!-- Contact Section -->
+<section id="contact" class="py-24 px-6 bg-white section-curved">
+    <div class="max-w-7xl mx-auto">
+        <div class="flex flex-col md:flex-row">
+            <div class="md:w-1/2 mb-16 md:mb-0 md:pr-16 animate__animated animate__fadeInLeft">
+              <span class="text-sm font-semibold tracking-wider text-gray-500 uppercase" data-i18n="contactUs">Contact Us</span>
+
+                <h2 class="text-3xl md:text-4xl font-bold mt-2 mb-6" data-i18n="contactTitle">Get In Touch</h2>
+                <p class="text-gray-600 mb-8" data-i18n="contactText">Have questions or ready to schedule a service? Fill out the form and we'll get back to you within 24 hours.</p>
+
+                <!-- Contact Information (Visible for Desktop) -->
+                <div class="hidden md:block mt-8">
+                    <div class="space-y-6">
+                        <div class="flex items-start">
+                            <div class="bg-gray-100 p-3 rounded-lg mr-4">
+                                <i class="fas fa-phone text-gray-700"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-medium mb-1" data-i18n="phone">Phone</h4>
+                                <p class="text-gray-600">(575) 555-1234</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start">
+                            <div class="bg-gray-100 p-3 rounded-lg mr-4">
+                                <i class="fas fa-envelope text-gray-700"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-medium mb-1" data-i18n="email">Email</h4>
+                                <p class="text-gray-600">felix@chioscleanings.com</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start">
+                            <div class="bg-gray-100 p-3 rounded-lg mr-4">
+                                <i class="fas fa-map-marker-alt text-gray-700"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-medium mb-1" data-i18n="serviceArea">Service Area</h4>
+                                <p class="text-gray-600">Las Cruces, Mesilla, and surrounding areas</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="md:w-1/2 animate__animated animate__fadeInRight">
+                <form id="quoteForm" class="bg-white p-8 rounded-xl border border-gray-100 shadow-sm"
+                      @submit.prevent="alert('Thank you for your request! We will contact you within 24 hours.'); $event.target.reset()">
+                    <h3 class="text-xl font-bold mb-6" data-i18n="requestQuote">Request a Free Quote</h3>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                        <div>
+                            <label for="firstName" class="block text-sm font-medium mb-2" data-i18n="firstName">First Name *</label>
+                            <input type="text" id="firstName" name="firstName" required 
+                                   class="w-full px-4 py-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-black focus:border-transparent">
+                        </div>
+                        <div>
+                            <label for="lastName" class="block text-sm font-medium mb-2" data-i18n="lastName">Last Name *</label>
+                            <input type="text" id="lastName" name="lastName" required 
+                                   class="w-full px-4 py-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-black focus:border-transparent">
+                        </div>
+                    </div>
+
+                    <div class="mb-6">
+                        <label for="email" class="block text-sm font-medium mb-2" data-i18n="email">Email *</label>
+                        <input type="email" id="email" name="email" required 
+                               class="w-full px-4 py-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-black focus:border-transparent">
+                    </div>
+
+                    <div class="mb-6">
+                        <label for="phone" class="block text-sm font-medium mb-2" data-i18n="phone">Phone *</label>
+                        <input type="tel" id="phone" name="phone" required 
+                               class="w-full px-4 py-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-black focus:border-transparent">
+                    </div>
+
+                    <div class="mb-6">
+                        <label for="service" class="block text-sm font-medium mb-2" data-i18n="serviceNeeded">Service Needed *</label>
+                        <select id="service" name="service" required 
+                                class="w-full px-4 py-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-black focus:border-transparent select-arrow">
+                            <option value="">Select a service</option>
+                            <option value="residential" data-i18n="residential">Residential Cleaning</option>
+                            <option value="commercial" data-i18n="commercial">Commercial Cleaning</option>
+                            <option value="move" data-i18n="move">Move-In/Move-Out</option>
+                            <option value="airbnb" data-i18n="airbnb">Airbnb Cleaning</option>
+                        </select>
+                    </div>
+
+                    <div class="mb-6">
+                        <label for="details" class="block text-sm font-medium mb-2" data-i18n="additionalDetails">Additional Details</label>
+                        <textarea id="details" name="details" rows="4" 
+                                  class="w-full px-4 py-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-black focus:border-transparent"></textarea>
+                    </div>
+
+                    <!-- New Discount Code Field -->
+                    <div class="mb-6">
+                        <label for="discountCode" class="block text-sm font-medium mb-2" data-i18n="discountCode">Discount Code (Optional)</label>
+                        <input type="text" id="discountCode" name="discountCode" 
+                               class="w-full px-4 py-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-black focus:border-transparent"
+                               placeholder="Enter discount code if you have one">
+                    </div>
+
+                    <button type="submit" class="w-full bg-black text-white py-4 rounded-lg hover:bg-gray-800 transition-all font-medium" data-i18n="submitRequest">Submit Request</button>
+                </form>
+            </div>
+        </div>
+
+        <!-- Contact Information for Mobile -->
+        <div class="md:hidden mt-8">
+            <div class="space-y-6">
+                <div class="flex items-start">
+                    <div class="bg-gray-100 p-3 rounded-lg mr-4">
+                        <i class="fas fa-phone text-gray-700"></i>
+                    </div>
+                    <div>
+                        <h4 class="font-medium mb-1" data-i18n="phone">Phone</h4>
+                        <p class="text-gray-600">(575) 555-1234</p>
+                    </div>
+                </div>
+
+                <div class="flex items-start">
+                    <div class="bg-gray-100 p-3 rounded-lg mr-4">
+                        <i class="fas fa-envelope text-gray-700"></i>
+                    </div>
+                    <div>
+                        <h4 class="font-medium mb-1" data-i18n="email">Email</h4>
+                        <p class="text-gray-600">felix@chioscleanings.com</p>
+                    </div>
+                </div>
+
+                <div class="flex items-start">
+                    <div class="bg-gray-100 p-3 rounded-lg mr-4">
+                        <i class="fas fa-map-marker-alt text-gray-700"></i>
+                    </div>
+                    <div>
+                        <h4 class="font-medium mb-1" data-i18n="serviceArea">Service Area</h4>
+                        <p class="text-gray-600">Las Cruces, Mesilla, and surrounding areas</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<style> 
+@media (max-width: 768px) {
+    /* Hide the 'Contact Us' span on mobile */
+    #contact span {
+        display: none;
+    }
+
+    /* Ensure the rest of the content (Get In Touch, Have questions) is centered on mobile */
+    #contact h2, #contact p {
+        text-align: center;
+    }
+
+    /* Move contact info under the form for mobile */
+    #contact .md\\:hidden {
+        display: block;
+    }
+
+    /* Ensure contact info stays under the form on mobile */
+    #contact .md\\:w-1/2 {
+        order: 2;
+    }
+
+    #contact .space-y-6 {
+        text-align: left;
+    }
+}
+/* Hide default dropdown arrow */
+.select-arrow {
+    -webkit-appearance: none;  /* For Safari and Chrome */
+    -moz-appearance: none;     /* For Firefox */
+    appearance: none;          /* Standard syntax */
+    background-image: none;    /* Remove background image */
+}
+
+
+</style>
+    <!-- Areas Served -->
+    <section class="py-16 bg-gray-50 border-t border-gray-100 section-curved">
+        <div class="max-w-7xl mx-auto px-6 text-center">
+            <h2 class="text-2xl font-bold mb-8" data-i18n="areasTitle">Areas We Serve</h2>
+            <div class="flex flex-wrap justify-center gap-3">
+                <span class="px-5 py-2.5 bg-white rounded-full border border-gray-200 shadow-sm">Las Cruces</span>
+                <span class="px-5 py-2.5 bg-white rounded-full border border-gray-200 shadow-sm">Mesilla</span>
+                <span class="px-5 py-2.5 bg-white rounded-full border border-gray-200 shadow-sm">Doña Ana</span>
+                <span class="px-5 py-2.5 bg-white rounded-full border border-gray-200 shadow-sm">Chaparral</span>
+                <span class="px-5 py-2.5 bg-white rounded-full border border-gray-200 shadow-sm">Radium Springs</span>
+                <span class="px-5 py-2.5 bg-white rounded-full border border-gray-200 shadow-sm">All of Southern New Mexico</span>
+            </div>
+        </div>
+    </section>
+
+<!-- Footer -->
+<footer class="bg-black text-white pt-16 pb-8 px-6 footer-curved">
+    <div class="max-w-7xl mx-auto">
+        <div class="grid md:grid-cols-4 sm:grid-cols-1 gap-12 mb-12">
+            <!-- Left Column: Logo and Social Links -->
+            <div class="flex flex-col items-center md:items-start">
+                <a href="#" class="mb-4">
+                    <img src="img/logo.png" alt="Chios Cleanings" class="h-24 footer-logo">
+                </a>
+                <p class="text-gray-400 mb-4 text-center md:text-left" data-i18n="footerAbout">Professional cleaning services in Las Cruces, NM.</p>
+                <div class="flex space-x-4 justify-center md:justify-start">
+                    <a href="#" class="text-gray-400 hover:text-white transition-all"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="text-gray-400 hover:text-white transition-all"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+
+            <!-- Services Column -->
+            <div class="text-center md:text-left">
+                <h3 class="text-lg font-semibold mb-4 text-white" data-i18n="services">Services</h3>
+                <ul class="space-y-3">
+                    <li><a href="#services" class="text-gray-400 hover:text-white transition-all" data-i18n="residential">Residential Cleaning</a></li>
+                    <li><a href="#services" class="text-gray-400 hover:text-white transition-all" data-i18n="commercial">Commercial Cleaning</a></li>
+                    <li><a href="#services" class="text-gray-400 hover:text-white transition-all" data-i18n="move">Move-In/Move-Out</a></li>
+                    <li><a href="#services" class="text-gray-400 hover:text-white transition-all" data-i18n="airbnb">Airbnb Cleaning</a></li>
+                </ul>
+            </div>
+
+            <!-- Company Column -->
+            <div class="text-center md:text-left">
+                <h3 class="text-lg font-semibold mb-4 text-white" data-i18n="company">Company</h3>
+                <ul class="space-y-3">
+                    <li><a href="#about" class="text-gray-400 hover:text-white transition-all" data-i18n="about">About Us</a></li>
+                    <li><a href="#team" class="text-gray-400 hover:text-white transition-all" data-i18n="team">Our Team</a></li>
+                    <li><a href="#reviews" class="text-gray-400 hover:text-white transition-all" data-i18n="reviews">Reviews</a></li>
+                    <li><a href="#contact" class="text-gray-400 hover:text-white transition-all" data-i18n="contact">Contact</a></li>
+                </ul>
+            </div>
+
+            <!-- Contact Column -->
+            <div class="text-center md:text-left">
+                <h3 class="text-lg font-semibold mb-4 text-white" data-i18n="contact">Contact</h3>
+                <ul class="space-y-3 text-gray-400">
+                    <li class="flex items-start justify-center md:justify-start">
+                        <i class="fas fa-phone mt-1 mr-3 text-sm"></i>
+                        <span>(575) 555-1234</span>
+                    </li>
+                    <li class="flex items-start justify-center md:justify-start">
+                        <i class="fas fa-envelope mt-1 mr-3 text-sm"></i>
+                        <span>felix@chioscleanings.com</span>
+                    </li>
+                    <li class="flex items-start justify-center md:justify-start">
+                        <i class="fas fa-map-marker-alt mt-1 mr-3 text-sm"></i>
+                        <span>Las Cruces, NM</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center">
+            <p class="text-gray-500 text-sm mb-4 md:mb-0 text-center">© 2025 Chios Cleanings. All rights reserved.</p>
+            <div class="flex space-x-6 justify-center md:justify-start">
+                <!-- You can add any footer links here -->
+            </div>
+        </div>
+    </div>
+</footer>
+
+    <script>
+        // Initialize Alpine.js and language functionality
+        document.addEventListener('alpine:init', () => {
+            // Define translations
+            Alpine.store('translations', {
+                en: {
+                    // Navigation
+                    services: "Services",
+                    about: "About",
+                    team: "Our Team",
+                    reviews: "Reviews",
+                    contact: "Contact",
+                    
+                    // Hero Section
+                    heroTitle: "Exceptional Cleaning",
+                    heroSubtitle: "in Las Cruces",
+                    heroText: "Professional cleaning solutions tailored to your residential or commercial needs.",
+                    getQuote: "Get a Free Quote",
+                    ourServices: "Our Services",
+                    locallyOwned: "Locally Owned",
+                    womenOwned: "Women-Owned Business",
+                    
+                    // Services Section
+                    servicesTitle: "Premium Cleaning Solutions",
+                    servicesSubtitle: "Tailored services designed to meet your specific cleaning needs with unmatched attention to detail.",
+                    residential: "Residential Cleaning",
+                    residentialText: "Detailed cleaning for homes of all sizes, focusing on high-traffic areas, kitchens, and bathrooms for a fresh living space.",
+                    commercial: "Commercial Cleaning",
+                    commercialText: "Professional cleaning services for businesses, ensuring a sanitary environment for employees and clients.",
+                    move: "Move-In/Move-Out",
+                    moveText: "Comprehensive deep cleaning for property transitions, perfect for landlords, tenants, or homeowners.",
+                    airbnb: "Airbnb Cleaning",
+                    airbnbText: "Meticulous cleaning to ensure your rental property is always guest-ready with fresh linens and spotless surfaces.",
+                    learnMore: "Learn more",
+                    
+                    // Team Section
+                    ourTeam: "Our Team",
+                    teamTitle: "Meet Chios Cleanings",
+                    teamSubtitle: "Passionate professionals dedicated to delivering exceptional results.",
+                    founder: "Founder & Lead Cleaner",
+                    operations: "Operations Manager",
+                    customerRelations: "Customer Relations",
+                    aracelyBio: "With over 10 years in the industry, Aracely ensures every job meets her exacting standards.",
+                    doraBio: "Dora's organizational skills keep our operations running smoothly and efficiently.",
+                    felixBio: "Felix ensures every client receives personalized attention and outstanding service.",
+                  // About Section
+aboutUs: "About Us",
+aboutTitle: "Locally-Owned Cleaning Excellence",
+aboutText1: "Chios Cleanings is a passionate, locally-owned business dedicated to delivering exceptional cleaning services across New Mexico. Founded in 2020, we've built our reputation on reliability, attention to detail, and personalized service.",
+aboutText2: "Our team takes pride in transforming spaces, whether it's a cozy home, bustling office, or vacation rental. We believe a clean environment enhances quality of life and business success.",
+meetTeam: "Meet Our Team",
+contactUs: "Contact Us",
+
+                    
+                    // Reviews Section
+                    testimonials: "Testimonials",
+                    reviewsTitle: "What Our Clients Say",
+                    
+                    // CTA Section
+                    ctaTitle: "Transform Your Space with Professional Cleaning",
+                    ctaText: "Get your free quote today and discover why Las Cruces residents trust us with their cleaning needs.",
+                    
+                    // Contact Section
+                    contactTitle: "Get In Touch",
+                    contactText: "Have questions or ready to schedule a service? Fill out the form and we'll get back to you within 24 hours.",
+                    requestQuote: "Request a Free Quote",
+                    firstName: "First Name *",
+                    lastName: "Last Name *",
+                    email: "Email *",
+                    phone: "Phone *",
+                    serviceNeeded: "Service Needed *",
+                    additionalDetails: "Additional Details",
+                    submitRequest: "Submit Request",
+                    
+                    // Areas Served
+                    areasTitle: "Areas We Serve",
+                    
+                    // Footer
+                    company: "Company",
+                    footerAbout: "Professional cleaning services in Las Cruces, NM. Making spaces shine since 2020.",
+                    privacy: "Privacy Policy",
+                    terms: "Terms of Service"
+                },
+                es: {
+                    // Navigation
+                    services: "Servicios",
+                    about: "Nosotros",
+                    team: "Nuestro Equipo",
+                    reviews: "Reseñas",
+                    contact: "Contacto",
+                    
+                    // Hero Section
+                    heroTitle: "Limpieza Excepcional",
+                    heroSubtitle: "en Las Cruces",
+                    heroText: "Soluciones de limpieza profesional adaptadas a sus necesidades residenciales o comerciales.",
+                    getQuote: "Obtener Cotización",
+                    ourServices: "Nuestros Servicios",
+                    locallyOwned: "Localmente Propiedad",
+                    womenOwned: "Negocio de Mujeres",
+                    
+                    // Services Section
+                    servicesTitle: "Soluciones de Limpieza Premium",
+                    servicesSubtitle: "Servicios personalizados diseñados para satisfacer sus necesidades específicas con atención al detalle.",
+                    residential: "Limpieza Residencial",
+                    residentialText: "Limpieza detallada para hogares de todos los tamaños, centrándose en áreas de alto tráfico, cocinas y baños para un espacio vital fresco.",
+                    commercial: "Limpieza Comercial",
+                    commercialText: "Servicios de limpieza profesional para empresas, garantizando un ambiente sanitario para empleados y clientes.",
+                    move: "Limpieza de Mudanza",
+                    moveText: "Limpieza profunda integral para transiciones de propiedad, perfecta para propietarios, inquilinos o dueños de casa.",
+                    airbnb: "Limpieza para Airbnb",
+                    airbnbText: "Limpieza meticulosa para garantizar que su propiedad de alquiler esté siempre lista para los huéspedes con ropa de cama fresca y superficies impecables.",
+                    learnMore: "Aprende más",
+                    
+                    // Team Section
+                    ourTeam: "Nuestro Equipo",
+                    teamTitle: "Conoce a los Expertos en Limpieza",
+                    teamSubtitle: "Profesionales apasionados dedicados a ofrecer resultados excepcionales.",
+                    founder: "Fundadora y Limpiadora Principal",
+                    operations: "Gerente de Operaciones",
+                    customerRelations: "Relaciones con Clientes",
+                    aracelyBio: "Con más de 10 años en la industria, Aracely asegura que cada trabajo cumpla con sus exigentes estándares.",
+                    doraBio: "Las habilidades organizativas de Dora mantienen nuestras operaciones funcionando sin problemas y eficientemente.",
+                    felixBio: "Félix asegura que cada cliente reciba atención personalizada y un servicio excepcional.",
+                    
+                    // About Section
+                    aboutUs: "Nosotros",
+                    aboutTitle: "Excelencia en Limpieza de Mujeres",
+                    aboutText1: "Chios Cleanings es un negocio apasionado, propiedad de mujeres, dedicado a brindar servicios de limpieza excepcionales en todo Nuevo México. Fundada en 2020, hemos construido nuestra reputación en confiabilidad, atención al detalle y servicio personalizado.",
+                    aboutText2: "Nuestro equipo se enorgullece de transformar espacios, ya sea un hogar acogedor, una oficina bulliciosa o un alquiler vacacional. Creemos que un ambiente limpio mejora la calidad de vida y el éxito empresarial.",
+                    meetTeam: "Conoce al Equipo",
+                    contactUs: "Contáctenos",
+                    
+                    // Reviews Section
+                    testimonials: "Testimonios",
+                    reviewsTitle: "Lo Que Dicen Nuestros Clientes",
+                    
+                    // CTA Section
+                    ctaTitle: "¿Listo para Experimentar la Diferencia Chios?",
+                    ctaText: "Obtenga su cotización gratuita hoy y descubra por qué los residentes de Las Cruces confían en nosotros para sus necesidades de limpieza.",
+                    
+                    // Contact Section
+                    contactTitle: "Contáctenos",
+                    contactText: "¿Tiene preguntas o está listo para programar un servicio? Complete el formulario y nos comunicaremos con usted dentro de las 24 horas.",
+                    requestQuote: "Solicitar Cotización Gratuita",
+                    firstName: "Nombre *",
+                    lastName: "Apellido *",
+                    email: "Correo Electrónico *",
+                    phone: "Teléfono *",
+                    serviceNeeded: "Servicio Necesario *",
+                    additionalDetails: "Detalles Adicionales",
+                    submitRequest: "Enviar Solicitud",
+                    
+                    // Areas Served
+                    areasTitle: "Áreas que Servimos",
+                    
+                    // Footer
+                    company: "Empresa",
+                    footerAbout: "Servicios profesionales de limpieza en Las Cruces, NM. Haciendo brillar espacios desde 2020.",
+                    privacy: "Política de Privacidad",
+                    terms: "Términos de Servicio"
+                }
+            });
+
+            // Initialize language store
+            Alpine.store('language', {
+                current: 'en',
+                init() {
+                    // Check for saved language preference
+                    const savedLang = localStorage.getItem('chiosLang');
+                    if (savedLang) {
+                        this.current = savedLang;
+                    }
+                    this.updateTexts();
+                },
+                toggle() {
+                    this.current = this.current === 'en' ? 'es' : 'en';
+                    localStorage.setItem('chiosLang', this.current);
+                    this.updateTexts();
+                },
+                updateTexts() {
+                    // Get all elements with data-i18n attribute
+                    const elements = document.querySelectorAll('[data-i18n]');
+                    elements.forEach(el => {
+                        const key = el.getAttribute('data-i18n');
+                        if (Alpine.store('translations')[this.current][key]) {
+                            if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') {
+                                el.placeholder = Alpine.store('translations')[this.current][key];
+                            } else if (el.tagName === 'OPTION') {
+                                el.textContent = Alpine.store('translations')[this.current][key];
+                            } else {
+                                el.textContent = Alpine.store('translations')[this.current][key];
+                            }
+                        }
+                    });
+                }
+            });
+        });
+
+        // Initialize language on page load
+        document.addEventListener('DOMContentLoaded', () => {
+            Alpine.store('language').init();
+        });
+
+        // Intersection Observer for animations
+        document.addEventListener('DOMContentLoaded', function() {
+            const animateOnScroll = (elements, animation) => {
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add(animation);
+                            observer.unobserve(entry.target);
+                        }
+                    });
+                }, { threshold: 0.1 });
+                
+                elements.forEach(element => {
+                    observer.observe(element);
+                });
+            };
+            
+            // Animate sections when they come into view
+            const sections = document.querySelectorAll('section');
+            animateOnScroll(sections, 'animate__fadeIn');
+            
+            // Animate service cards with delays
+            const serviceCards = document.querySelectorAll('.service-card');
+            serviceCards.forEach((card, index) => {
+                card.style.animationDelay = `${index * 0.1}s`;
+                animateOnScroll([card], 'animate__fadeInUp');
+            });
+            
+            // Animate review cards with delays
+            const reviewCards = document.querySelectorAll('.review-card');
+            reviewCards.forEach((card, index) => {
+                card.style.animationDelay = `${index * 0.1 + 0.1}s`;
+                animateOnScroll([card], 'animate__fadeIn');
+            });
+        });
+    </script>
+</body>
+</html>

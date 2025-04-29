@@ -1,0 +1,108 @@
+Pixel Launch ////
+
+
+
+
+
+
+
+
+Nova Launch ///
+
+
+
+
+
+
+
+
+Forge Launch ///
+
+
+
+
+
+
+
+BLACNOVA LAUNCH /////
+
+
+Blogs Section
+Website Themes (For Sale)
+Homepage 
+Modern Header and Footer (Both Sticky with Hamburger menu and centered content for mobile)
+Privacy/Terms, FAQ, Cookies Page 
+Account Dashboard 
+Services Section and Page
+Quote form Section and page 
+Projects Showcase (With Live Showcase)
+Business Portfolio (Client Showcase)
+About Us (With 3D Element)
+Contact Us Form Section and Page
+Tools (Website,Server.File,Creator,Devoloper Oreintened) (With Ads)
+Merch, Donation Link/Button and Tiers/Pricing.
+
+
+🧰 Core Tech Stack
+
+
+🔧 Development & Frameworks
+
+Next.js – Modern React framework (SSR, fast builds)
+Tailwind CSS – Utility-first CSS framework
+Animate.css – Animation library
+PostCSS – For purging unused Tailwind/CSS
+Alpine.js – Minimal JS framework for interactivity
+Heroicons – Tailwind-style icons
+Lazy Load – For optimizing image/script loads
+Custom 404/Error Pages – Better UX
+
+📦 Ecommerce & Cart
+
+Medusa.js – Headless ecommerce engine
+Printify API – Print-on-demand merchandise store integration
+Stripe/Ouseta – Subscriptions & checkout flow
+
+📬 Forms, Auth & UX
+
+Formspree – Secure forms system0
+hCaptcha / reCAPTCHA – Bot/spam protection
+JWT – Secure route protection middleware
+Rate Limiting – Brute-force/spam control
+
+💬 UI Enhancements
+
+Toast Notifications – In-app feedback system
+Helmet.js – Secure HTTP headers
+Internationalization (i18n) – Multi-language support
+
+📊 Analytics & Monetization
+
+Firebase Analytics – Track user behavior
+Google AdSense – Monetize with display ads
+BuyMeACoffee – Donation system
+
+📈 Marketing & Outreach
+
+Meta & Google Ads – Ad campaign platforms
+Buttondown – Newsletter/email marketing
+Sitemap & robots.txt Generator – SEO must-haves (https://ogp.me/  for ogp tags/docs)
+Fiverr – Source video/promotional content
+
+🔒 Hosting, Security & Domains
+
+Namecheap – Domain provider
+Cloudflare – CDN, DDoS, and performance
+CSP Headers – Mitigate XSS attacks
+Helmet.js – Secure headers middleware
+
+🧾 Business Tools
+
+Zoho – Invoices, CRM, and business emails
+Stripe – Payments for subscriptions and one-time purchases
+Metricool - Automated Social Media postings.
+Google/Nextdoor/LinkedIn/Bing Places/Apple Maps/MapQuest/Yelp/Facebook/Foursquare/Better Business Bureau/Alignable/Fivver/Glassdoor - Selling Points / Promoting Points
+Local Flyers - Canva
+Local Stickers - Stickermule 
+ZenBusiness (LLC)
+Discord (Community)
